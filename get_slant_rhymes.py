@@ -129,7 +129,7 @@ def order_rhymes(original_word_structure, rhyme_structures, common_english_words
     for rhyme_structure in rhyme_structures:
         rhyme_score = 0
         if rhyme_structure["word"] in common_english_words:
-            rhyme_score += 1
+            rhyme_score += 0
 
         consonance_score = 0 
         for i in range(len(original_word_structure["raw_prons"])):
