@@ -37,6 +37,12 @@ def get_common_words(english_words, pronounciations):
     
     return p_copy
 
+def lists_are_equal(test_list1, test_list2):
+    if len(test_list1)== len(test_list2) and len(test_list1) == sum([1 for i, j in zip(test_list1, test_list2) if i == j]):
+        return True
+    else : 
+        return False
+
 # ASSUME THAT ALL WORDS HAVE THE SAME NUMBER OF VOWEL PHONEMES
 def get_structure(words, vowel_phonemes):
     final_dict = {}
@@ -54,7 +60,7 @@ def get_structure(words, vowel_phonemes):
                     vowels_of_pron.append(phoneme_to_check)
                     num_vowels += 1
 
-            if len(vowels_of_prons) == 0 or collections.Counter(vowels_of_pron) != collections.Counter(vowels_of_prons[0]):
+            if len(vowels_of_prons) < 1 or lists_are_equal(vowels_of_pron, vowels_of_prons[0]):
                 vowels_of_prons.append(vowels_of_pron)
         
 
